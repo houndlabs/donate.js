@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>donate.js</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+  <body>
+
+    <div class="container"></div>
+
+    <script type="text/template" id="tmpl-snippet">
+      &lt;a href="//localhost:8000/button.html#<%= ein %>" class="donate-button"&gt;Donate&lt;/a&gt;
+      &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://localhost:8000/src/donate.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'donate-js');&lt;/script&gt;
+    </script>
+
+    <a href="//localhost:8000/button.html#362423707" class="donate-button">Donate</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://localhost:8000/src/donate.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'donate-js');</script>
+
+    <script src="//fb.me/react-0.8.0.js"></script>
+    <script src="//fb.me/JSXTransformer-0.8.0.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
+    <script src="config.js"></script>
+    <script src="src/main.js" type="text/jsx"></script>
+  </body>
+</html>

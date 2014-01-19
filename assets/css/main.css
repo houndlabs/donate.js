@@ -1,0 +1,9 @@
+#snippet {
+  width: 265px;
+  color: #666;
+  white-space: nowrap;
+  resize: none;
+  overflow: hidden;
+  line-height: 21px;
+  overflow: hidden;
+}

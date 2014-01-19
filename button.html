@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  </head>
+  <body>
+    <a type="button" class="btn btn-default btn-xs" id="donate-button"
+      href=>Donate</a>
+    <script>
+      var currentHost = function() { return document.referrer.split('/')[2]; }
+
+      var getHosts = function() {
+        var matches = document.cookie.match(/donate=(\S*);?/);
+        if (!matches) { return []; }
+        return matches[1].split(',');
+      };
+
+      var hasDonated = function() {
+        return getHosts().indexOf(currentHost()) != -1
+      };
+
+      var addHost = function() {
+        var hosts = getHosts().concat([currentHost()]).join(',');
+        var str = "donate=" + hosts;
+        console.log(str);
+        document.cookie = str;
+      };
+
+      var el = document.getElementById("donate-button");
+
+      var setDonated = function() { el.innerHTML = "Thanks"; }
+
+      if (hasDonated()) { setDonated(); }
+
+      el.setAttribute('href', window.location.hash);
+      document.getElementById("donate-button").onclick = function() {
+        addHost();
+        setDonated();
+        window.open(
+          "https://www.networkforgood.org/donation/MakeDonation.aspx?ORGID2=" +
+          window.location.hash.slice(1));
+      };
+    </script>
+  </body>
+</html>
