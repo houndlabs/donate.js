@@ -51,10 +51,12 @@
       var tmpl = _.template($("#tmpl-snippet").html())({
         ein: this.props.ein == '' ? "362423707" : this.props.ein
       }).replace(/&lt;/g, '<').replace(/&gt;/g, '>');
+      tmpl = _.map(tmpl.trim().split('\n'), function(l) {
+        return l.trim()
+      }).join('\n');
 
       return (
-        <textarea id="snippet" rows="2" readOnly onClick={this.select}>
-          {tmpl}
+        <textarea id="snippet" rows="2" readOnly onClick={this.select} value={tmpl}>
         </textarea>
       )
     }
